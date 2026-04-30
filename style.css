@@ -5,7 +5,9 @@
     --cor04: #2E4559;
     --cor05: #0D0D0D;
     --cor06: #FFFFFF;
-    --cor07: #477097;
+    --cor07: #163c86;
+    --cor08: #477097;
+
 }
 *{
     margin: 0;
@@ -28,8 +30,8 @@ body {
 
 /* HEADER */
 .header {
-    background-color: var(--cor01);
-    color: var(--cor06);
+    background: linear-gradient(90deg, var(--cor08) 0%, var(--cor02) 50%, var(--cor03) 100%);
+    color: var(--cor07);
     padding: 20px 0;
     position: sticky;
     top: 0;
@@ -54,6 +56,12 @@ body {
     font-size: 12px;
     color: var(--cor06);
     opacity: 0.8;
+}
+
+.logo-img {
+    height: 90px;
+    width: auto;
+    object-fit: contain;
 }
 
 .nav ul {
