@@ -1,0 +1,14 @@
+:root{
+    --cor01: #0A1840;
+    --cor02: #0E2759;
+    --cor03: #0E3659;
+    --cor04: #2E4559;
+    --cor05: #0D0D0D;
+    --cor06: #FFFFFF;
+    --cor07: #477097;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
