@@ -1,4 +1,4 @@
-:root{
+:root {
     --cor01: #0A1840;
     --cor02: #0E2759;
     --cor03: #0E3659;
@@ -7,9 +7,9 @@
     --cor06: #FFFFFF;
     --cor07: #163c86;
     --cor08: #477097;
-
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -25,14 +25,14 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 
-/* HEADER */
+/* ===== HEADER - MOBILE FIRST ===== */
 .header {
     background: linear-gradient(90deg, var(--cor08) 0%, var(--cor02) 50%, var(--cor03) 100%);
     color: var(--cor07);
-    padding: 20px 0;
+    padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -41,33 +41,42 @@ body {
 
 .header .container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    text-align: center;
 }
 
 .logo h1 {
-    font-size: 28px;
+    font-size: 20px;
     margin-bottom: 5px;
     color: var(--cor07);
     font-weight: bold;
 }
 
 .logo p {
-    font-size: 12px;
+    font-size: 11px;
     color: var(--cor06);
     opacity: 0.8;
 }
 
 .logo-img {
-    height: 90px;
+    height: 60px;
     width: auto;
     object-fit: contain;
 }
 
 .nav ul {
     display: flex;
+    flex-direction: column;
     list-style: none;
-    gap: 30px;
+    gap: 8px;
+    text-align: center;
+    width: 100%;
 }
 
 .nav a {
@@ -75,46 +84,48 @@ body {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
+    font-size: 14px;
 }
 
 .nav a:hover {
     color: var(--cor07);
 }
 
-/* HERO SECTION */
+/* ===== HERO SECTION - MOBILE FIRST ===== */
 .hero {
     background: linear-gradient(135deg, var(--cor01) 0%, var(--cor03) 100%);
     color: var(--cor06);
-    padding: 120px 20px;
+    padding: 60px 15px;
     text-align: center;
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%230A1840" width="1200" height="600"/><circle cx="200" cy="150" r="150" fill="%230E3659" opacity="0.3"/><circle cx="1000" cy="450" r="200" fill="%232E4559" opacity="0.2"/></svg>');
     background-size: cover;
-    background-attachment: fixed;
 }
 
 .hero-content h2 {
-    font-size: 48px;
-    margin-bottom: 20px;
+    font-size: 28px;
+    margin-bottom: 15px;
     font-weight: bold;
 }
 
 .hero-content p {
-    font-size: 20px;
-    margin-bottom: 30px;
+    font-size: 16px;
+    margin-bottom: 20px;
     opacity: 0.95;
 }
 
-/* BOTÕES */
+/* ===== BOTÕES - MOBILE FIRST ===== */
 .btn {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 12px 24px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 300px;
 }
 
 .btn-primary {
@@ -128,39 +139,39 @@ body {
     box-shadow: 0 5px 15px rgba(71, 112, 151, 0.4);
 }
 
-/* SEÇÃO SERVIÇOS */
+/* ===== SEÇÃO SERVIÇOS - MOBILE FIRST ===== */
 .servicos {
-    padding: 80px 20px;
+    padding: 40px 15px;
     background-color: #f9f9f9;
 }
 
 .section-title {
     text-align: center;
-    font-size: 36px;
-    margin-bottom: 50px;
+    font-size: 24px;
+    margin-bottom: 30px;
     color: var(--cor01);
     position: relative;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
 }
 
 .section-title::after {
     content: '';
     display: block;
-    width: 80px;
+    width: 60px;
     height: 4px;
     background-color: var(--cor07);
-    margin: 15px auto 0;
+    margin: 10px auto 0;
 }
 
 .servicos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 20px;
 }
 
 .servico-card {
     background-color: var(--cor06);
-    padding: 40px 20px;
+    padding: 25px 15px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
@@ -173,71 +184,72 @@ body {
 }
 
 .servico-icon {
-    font-size: 48px;
-    margin-bottom: 20px;
+    font-size: 40px;
+    margin-bottom: 15px;
 }
 
 .servico-card h3 {
     color: var(--cor01);
-    margin-bottom: 15px;
-    font-size: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
 }
 
 .servico-card p {
     color: #666;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.6;
 }
 
-/* SEÇÃO SOBRE */
+/* ===== SEÇÃO SOBRE - MOBILE FIRST ===== */
 .sobre {
-    padding: 80px 20px;
+    padding: 40px 15px;
     background-color: var(--cor06);
 }
 
 .sobre-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    grid-template-columns: 1fr;
+    gap: 30px;
     align-items: center;
 }
 
 .sobre-text h2 {
-    font-size: 36px;
+    font-size: 24px;
     color: var(--cor01);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .sobre-text p {
     color: #666;
-    margin-bottom: 20px;
-    font-size: 16px;
+    margin-bottom: 15px;
+    font-size: 14px;
     line-height: 1.8;
 }
 
 .stats {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 40px;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 25px;
 }
 
 .stat {
     background-color: var(--cor02);
     color: var(--cor06);
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
     text-align: center;
 }
 
 .stat h3 {
-    font-size: 32px;
-    margin-bottom: 10px;
+    font-size: 24px;
+    margin-bottom: 8px;
 }
 
 .stat p {
     color: var(--cor06);
     opacity: 0.9;
+    font-size: 13px;
 }
 
 .sobre-imagem {
@@ -248,26 +260,26 @@ body {
 
 .sobre-imagem img {
     width: 100%;
-    height: 400px;
+    height: auto;
     object-fit: cover;
     display: block;
 }
 
-/* SEÇÃO BENEFÍCIOS */
+/* ===== SEÇÃO BENEFÍCIOS - MOBILE FIRST ===== */
 .beneficios {
-    padding: 80px 20px;
+    padding: 40px 15px;
     background-color: #f9f9f9;
 }
 
 .beneficios-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 20px;
 }
 
 .beneficio-item {
     background-color: var(--cor06);
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
     border-left: 5px solid var(--cor07);
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
@@ -280,19 +292,19 @@ body {
 
 .beneficio-item h3 {
     color: var(--cor01);
-    margin-bottom: 15px;
-    font-size: 18px;
+    margin-bottom: 10px;
+    font-size: 16px;
 }
 
 .beneficio-item p {
     color: #666;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.6;
 }
 
-/* SEÇÃO CONTATO */
+/* ===== SEÇÃO CONTATO - MOBILE FIRST ===== */
 .contato {
-    padding: 80px 20px;
+    padding: 40px 15px;
     background: linear-gradient(135deg, var(--cor01) 0%, var(--cor03) 100%);
     color: var(--cor06);
 }
@@ -307,42 +319,44 @@ body {
 
 .contato-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    grid-template-columns: 1fr;
+    gap: 30px;
 }
 
 .contato-info h3 {
-    font-size: 24px;
-    margin-bottom: 30px;
+    font-size: 20px;
+    margin-bottom: 20px;
 }
 
 .info-item {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .info-item strong {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     color: var(--cor07);
+    font-size: 14px;
 }
 
 .info-item p {
     opacity: 0.9;
+    font-size: 13px;
 }
 
 .contato-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
 }
 
 .contato-form input,
 .contato-form textarea {
-    padding: 15px;
+    padding: 12px;
     border: none;
     border-radius: 5px;
     font-family: inherit;
-    font-size: 14px;
+    font-size: 13px;
     background-color: rgba(255, 255, 255, 0.95);
 }
 
@@ -353,29 +367,33 @@ body {
     box-shadow: 0 0 8px var(--cor07);
 }
 
-/* FOOTER */
+/* ===== FOOTER - MOBILE FIRST ===== */
 .footer {
     background-color: var(--cor05);
     color: var(--cor06);
-    padding: 30px 20px;
+    padding: 20px 15px;
     text-align: center;
+    font-size: 13px;
 }
 
 .footer .container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    gap: 15px;
 }
 
 .social-links {
     display: flex;
-    gap: 20px;
+    gap: 15px;
+    justify-content: center;
 }
 
 .social-links a {
     color: var(--cor06);
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     transition: color 0.3s ease;
 }
 
@@ -383,50 +401,352 @@ body {
     color: var(--cor07);
 }
 
-/* RESPONSIVO */
-@media (max-width: 768px) {
+/* ===== MEDIA QUERIES - TABLET (768px+) ===== */
+@media (min-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    /* Header */
     .header .container {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        text-align: left;
+    }
+
+    .logo-img {
+        height: 80px;
     }
 
     .nav ul {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
+        flex-direction: row;
+        gap: 20px;
+        width: auto;
+    }
+
+    .nav a {
+        font-size: 15px;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 80px 20px;
+        background-attachment: fixed;
     }
 
     .hero-content h2 {
-        font-size: 32px;
+        font-size: 36px;
     }
 
     .hero-content p {
-        font-size: 16px;
+        font-size: 18px;
     }
 
-    .sobre-content {
-        grid-template-columns: 1fr;
+    .btn {
+        width: auto;
+        padding: 12px 30px;
+        font-size: 15px;
     }
 
-    .stats {
-        grid-template-columns: 1fr;
-    }
-
-    .contato-content {
-        grid-template-columns: 1fr;
-    }
-
-    .footer .container {
-        flex-direction: column;
-        gap: 20px;
+    /* Serviços */
+    .servicos {
+        padding: 60px 20px;
     }
 
     .section-title {
         font-size: 28px;
+        margin-bottom: 40px;
     }
 
-    .servicos-grid,
+    .servicos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .servico-card {
+        padding: 30px;
+    }
+
+    .servico-icon {
+        font-size: 44px;
+    }
+
+    .servico-card h3 {
+        font-size: 19px;
+    }
+
+    .servico-card p {
+        font-size: 14px;
+    }
+
+    /* Sobre */
+    .sobre {
+        padding: 60px 20px;
+    }
+
+    .sobre-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .sobre-text h2 {
+        font-size: 28px;
+    }
+
+    .sobre-text p {
+        font-size: 15px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .stat h3 {
+        font-size: 28px;
+    }
+
+    .stat p {
+        font-size: 14px;
+    }
+
+    .sobre-imagem img {
+        height: 350px;
+    }
+
+    /* Benefícios */
+    .beneficios {
+        padding: 60px 20px;
+    }
+
     .beneficios-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .beneficio-item {
+        padding: 25px;
+    }
+
+    .beneficio-item h3 {
+        font-size: 17px;
+    }
+
+    /* Contato */
+    .contato {
+        padding: 60px 20px;
+    }
+
+    .contato-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .contato-info h3 {
+        font-size: 22px;
+    }
+
+    .info-item strong {
+        font-size: 15px;
+    }
+
+    .info-item p {
+        font-size: 14px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 25px 20px;
+        font-size: 14px;
+    }
+
+    .footer .container {
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .social-links {
+        gap: 20px;
+    }
+}
+
+/* ===== MEDIA QUERIES - DESKTOP (1024px+) ===== */
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    /* Header */
+    .logo-img {
+        height: 90px;
+    }
+
+    .logo h1 {
+        font-size: 24px;
+    }
+
+    .nav ul {
+        gap: 30px;
+    }
+
+    .nav a {
+        font-size: 16px;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 120px 30px;
+    }
+
+    .hero-content h2 {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+
+    .hero-content p {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .btn {
+        padding: 12px 40px;
+        font-size: 16px;
+    }
+
+    /* Serviços */
+    .servicos {
+        padding: 80px 30px;
+    }
+
+    .section-title {
+        font-size: 36px;
+        margin-bottom: 50px;
+        padding-bottom: 20px;
+    }
+
+    .section-title::after {
+        width: 80px;
+        margin: 15px auto 0;
+    }
+
+    .servicos-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .servico-card {
+        padding: 40px 20px;
+    }
+
+    .servico-icon {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+
+    .servico-card h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .servico-card p {
+        font-size: 15px;
+    }
+
+    /* Sobre */
+    .sobre {
+        padding: 80px 30px;
+    }
+
+    .sobre-text h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .sobre-text p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .stats {
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .stat {
+        padding: 30px;
+    }
+
+    .stat h3 {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .sobre-imagem img {
+        height: 400px;
+    }
+
+    /* Benefícios */
+    .beneficios {
+        padding: 80px 30px;
+    }
+
+    .beneficios-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .beneficio-item {
+        padding: 30px;
+    }
+
+    .beneficio-item h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .beneficio-item p {
+        font-size: 15px;
+    }
+
+    /* Contato */
+    .contato {
+        padding: 80px 30px;
+    }
+
+    .contato-info h3 {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .info-item strong {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .info-item p {
+        font-size: 15px;
+    }
+
+    .contato-form {
+        gap: 15px;
+    }
+
+    .contato-form input,
+    .contato-form textarea {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 30px 30px;
+        font-size: 15px;
+    }
+
+    .social-links {
+        font-size: 20px;
     }
 }
