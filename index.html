@@ -189,29 +189,47 @@
 
     <script>
         // Menu Hamburguer
-        const hamburger = document.getElementById('hamburger');
-        const nav = document.getElementById('nav');
-        const navLinks = nav.querySelectorAll('a');
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const nav = document.getElementById('nav');
+            const navLinks = nav ? nav.querySelectorAll('a') : [];
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            nav.classList.toggle('active');
-        });
-
-        // Fechar menu ao clicar em um link
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                nav.classList.remove('active');
-            });
-        });
-
-        // Fechar menu ao clicar fora
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.header')) {
-                hamburger.classList.remove('active');
-                nav.classList.remove('active');
+            if (!hamburger || !nav) {
+                console.error('Hamburger ou Nav não encontrados');
+                return;
             }
+
+            // Abrir/Fechar menu ao clicar no hamburguer
+            hamburger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                hamburger.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+
+            // Fechar menu ao clicar em um link
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    nav.classList.remove('active');
+                });
+            });
+
+            // Fechar menu ao clicar fora
+            document.addEventListener('click', function(e) {
+                const header = document.querySelector('.header');
+                if (header && !header.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    nav.classList.remove('active');
+                }
+            });
+
+            // Também fechar com ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    hamburger.classList.remove('active');
+                    nav.classList.remove('active');
+                }
+            });
         });
     </script>
 </body>
